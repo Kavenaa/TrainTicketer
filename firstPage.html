@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Train Ticket System</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the content */
+.content {
+  background-color: #ddd;
+  padding: 10px;
+  height: 200px; /* Should be removed. Only for demonstration */
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: Black;
+  font-family: verdana;
+  font-size: 180%;
+}
+
+h2 {
+  text-align: center;
+  color: Black;
+  font-family: verdana;
+  font-size: 100%;
+}
+
+p  {
+  text-align: center;
+  color: black;
+  font-family: verdana;
+  font-size: 100%;
+}
+
+div {
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Please register</h1>
+<div class="topnav">
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+  <a href="#">Help</a>
+</div>
+
+<div class="container">
+    <div class="form-group">
+      <label for="first_name">UserName:</label>
+      <input type="text" class="form-control" id="user_name" placeholder="Enter Username" name="Username">
+    </div>
+
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="text" class="form-control" id="password" placeholder="Enter Password" name="password">
+    </div>
+</div>
+
+<p>
+	<button onclick="window.location.replace('TicketPage.html');">ENTER</button>
+</p>
+
+<p>
+  <button onclick="window.location.replace('index.html');">BACK</button>
+</p>
+
+</body>
+</html>
