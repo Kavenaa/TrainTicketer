@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Ticket</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    {% comment %} <form method="post"> {% endcomment %}
+    <input id="emailbtn" type="button" value="Send email"/>
+    
+     <script type="text/javascript">
+
+     document.getElementById("emailbtn").onclick = function() {sendEmail()};
+
+     function sendEmail(){
+         window.open('mailto:christopherphan100@gmail.com?subject=Train ticket Confirmation&body=Confirmation');
+
+        console.log("hi");
+          Email.send({
+              Host: "smtp.gmail.com",
+              Username: "username@gmail.com",
+              Password: "Password",
+              To: "reciever@gmail.com",
+              From: "sender@gmail.com",
+              Subject:"Train ticket Confirmation",
+              Body:"Confirmation email!",
+          })
+            alert("mailed");
+      }
+    </script>
+    
+    <script src="" async defer></script>
+  </body>
+</html>
