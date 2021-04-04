@@ -15,7 +15,7 @@ VALUES (:firstname, :lastname, :email, :upassword)");
     $stmt->bindParam(':firstname', $firstname);
     $stmt->bindParam(':lastname', $lastname);
     $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':upassword', $upassword)
+    $stmt->bindParam(':upassword', $upassword);
 
 // insert a row
     $firstname = $_POST["firstname"];
