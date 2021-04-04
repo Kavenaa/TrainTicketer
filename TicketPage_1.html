@@ -225,6 +225,28 @@ function myMap() {
 }
 
 </script>
+<input id="emailbtn" type="button" value="Send email"/>
+<script type="text/javascript">
+
+     document.getElementById("emailbtn").onclick = function() {sendEmail()};
+      
+     function sendEmail(){
+         window.open('mailto:christopherphan100@gmail.com?subject=Train ticket Confirmation&body=Confirmation');
+          alert("mailed");
+        console.log("hi");
+          Email.send({
+              Host: "smtp.gmail.com",
+              Username: "username@gmail.com",
+              Password: "Password",
+              To: "reciever@gmail.com",
+              From: "sender@gmail.com",
+              Subject:"Train ticket Confirmation",
+              Body:"Confirmation email!",
+          })
+            alert("mailed");
+      }
+    </script>
+    
       
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5Ibcb2PTtNPOZmNrVec89jNHlyUCTiIc&callback=myMap&libraries=places"></script>    
   </body>
