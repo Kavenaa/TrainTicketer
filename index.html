@@ -11,8 +11,35 @@
 }
 
 body {
+  background-color:lightseagreen;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.button {
+  position: relative;
+  top: 250px;
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration:linen;
+  display: inline-block;
+  font-size: 20px;
+  margin: 5px 2px;
+  cursor: pointer;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+.button2:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+.button3:hover {
+  background-color: #4CAF50;
+  color: white;
 }
 
 /* Style the top navigation bar */
@@ -52,13 +79,19 @@ body {
 
 
 h1 {
+  position: relative;
+  top: 250px;
   text-align: center;
-  color: Black;
-  font-family: verdana;
-  font-size: 180%;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #303030;
+  font-weight: 600;
+  margin-bottom: 30px;
 }
 
 h2 {
+  position: relative;
+  top: 255px;
   text-align: center;
   color: Black;
   font-family: verdana;
@@ -92,16 +125,16 @@ div {
 
 <form action="" method="post"></form>
 
-	<h1>Welcome</h1>
-  <h1>Please select an option</h1>
+	<h1>Train Ticket System</h1>
+  <h2>Please select an option</h2>
 	<div class="container">
     
   </div>
 
 <p>
-	<button onclick="window.location.replace('newUser.html');">Create Account</button>
-  <button onclick="window.location.replace('firstPage.html');">Login</button>
-  <button onclick="window.location.replace('index.html');">BACK</button>
+	<button class="button button1" onclick="window.location.replace('register.php');">Create Account</button>
+  <button class="button button2" onclick="window.location.replace('firstPage.html');">Login</button>
+  <button class="button button3" onclick="window.location.replace('index.html');">Back</button>
 </p>
 	
 </form>
