@@ -5,32 +5,7 @@ $username = "cap";
 $password = "capstonedb";
 
 try {
-  $conn = new PDO("mysql:host=$servername;dbname=ebdb", $username, $password);
-  // set the PDO error mode to exception
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "Connected successfully";
-
-  // insert a row
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  $upassword = $_POST["upassword"];
-
-  $stmt = $conn->prepare("INSERT INTO test (name, email, upassword) VALUES (:name, :email, :upassword)");
-  $stmt->bindParam(':name', $name);
-  $stmt->bindParam(':email', $email);
-  $stmt->bindParam(':upassword', $upassword);
-
-
-  $stmt->execute();
-
-
-  echo "New records created successfully";
-}catch(PDOException $e) {
-  echo "Connection failed: " . $e->getMessage();
-}
-$conn = null;
-
-// define variables and set to empty values
+	// define variables and set to empty values
 $nameErr = $emailErr = $passErr = "";
 $name = $email = $upassword = "";
 
@@ -64,13 +39,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
-  function test_input($data) {
+ 
+}
+  $conn = new PDO("mysql:host=$servername;dbname=ebdb", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo "Connected successfully";
+
+  // insert a row
+  $name = $_POST["name"];
+  $email = $_POST["email"];
+  $upassword = $_POST["upassword"];
+
+  $stmt = $conn->prepare("INSERT INTO test (name, email, upassword) VALUES (:name, :email, :upassword)");
+  $stmt->bindParam(':name', $name);
+  $stmt->bindParam(':email', $email);
+  $stmt->bindParam(':upassword', $upassword);
+
+
+  $stmt->execute();
+
+
+  echo "New records created successfully";
+}catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
+}
+$conn = null;
+
+
+
+ function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
   }
-}
 
 
 ?>
