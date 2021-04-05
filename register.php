@@ -2,6 +2,7 @@
 // define variables and set to empty values
 $nameErr = $emailErr = $passErr = "";
 $name = $email = $upassword = "";
+$valid = 0;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -11,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
       $nameErr = "Only letters and white space allowed";
+      $valid =  1;
     }
   }
   if (empty($_POST["upassword"])) {
@@ -20,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
       $nameErr = "Only letters and white space allowed";
+      $valid =  1;
     }
   }
 
@@ -30,8 +33,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // check if e-mail address is well-formed
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $emailErr = "Invalid email format";
+      $valid =  1;
     }
   }
+  function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+if($valid == 0){
 $servername = "aa1j2ay19mvo8dl.cew1fvzp06l6.us-east-2.rds.amazonaws.com";
 $username = "cap";
 $password = "capstonedb";
@@ -47,7 +58,7 @@ try {
     $stmt->bindParam(':upassword', $upassword);
 
 // insert a row
-    $firstname = $_POST["name"];
+    $name = $_POST["name"];
     $email = $_POST["email"];
     $upassword = $_POST["upassword"];
     $stmt->execute();
@@ -58,6 +69,7 @@ try {
   echo "Connection failed: " . $e->getMessage();
 }
 $conn = null;
+}
 
 }
 
