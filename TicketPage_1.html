@@ -2,7 +2,11 @@
 <html>
   <head>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <style>
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="index.js"></script>
+
+<style>
 
 table, th, td {
   border: 2px solid black;
@@ -225,25 +229,29 @@ function myMap() {
 }
 
 </script>
-<input id="emailbtn" type="button" value="Send email"/>
-<script type="text/javascript">
+<form method="post">
+<input id="emailbtn" type="button" value="Send email" onclick="sendEmail()"/>
+</form>
 
-     document.getElementById("emailbtn").onclick = function() {sendEmail()};
-      
+      <script type="text/javascript">
+      /* document.getElementById("emailbtn").onclick = function() {sendEmail()}; */
+
      function sendEmail(){
-         window.open('mailto:christopherphan100@gmail.com?subject=Train ticket Confirmation&body=Confirmation');
-          alert("mailed");
-        console.log("hi");
+         /* window.open('mailto:christopher.phan1@ontariotechu.net?subject=Train ticket Confirmation&body=Confirmation'); */
+
+        console.log("testingccp425");
           Email.send({
               Host: "smtp.gmail.com",
-              Username: "username@gmail.com",
-              Password: "Password",
-              To: "reciever@gmail.com",
-              From: "sender@gmail.com",
+              Username: "testingccp425@gmail.com",
+              Password: "Asdf1234!1",
+              To: "testingccp425@gmail.com",
+              From: "testingccp425@gmail.com",
               Subject:"Train ticket Confirmation",
               Body:"Confirmation email!",
-          })
-            alert("mailed");
+          }).then(
+            message => alert("Mail sent successful")
+          );
+           // alert("mailed");
       }
     </script>
     
